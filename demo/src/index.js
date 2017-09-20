@@ -2,7 +2,7 @@ import React, {Component} from 'react'
 import {render} from 'react-dom'
 
 import './index.css';
-import InputSelect from '../../src/InputSelect';
+import InputSelect from '../../src';
 
 class Demo extends Component {
   constructor() {

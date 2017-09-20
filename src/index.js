@@ -1,6 +1,6 @@
 import React, {Component} from 'react'
 
-import './InputSelect.css';
+import './index.css';
 import Textarea from 'react-autosize-textarea';
 
 export default class InputSelect extends Component {
@@ -62,7 +62,8 @@ export default class InputSelect extends Component {
     let state = this.manipState(this.state, 'value', option[this.props.labelKey]);
     state = this.manipState(state, 'selectedOption', option[this.props.valueKey]);
     state = this.manipState(state, 'currentOption', -1);
-    state = this.setIsOpen(state, false);
+    if(this.props.collapseOnSelect)
+      state = this.setIsOpen(state, false);
     this.setState(state);
 
     if(this.isFunction(this.props.onSelect))
@@ -276,29 +277,29 @@ export default class InputSelect extends Component {
 }
 
 InputSelect.defaultProps = {
-  key: "react-input-select",
-  style: null,
-  ref: null,
-  value: "",
-  valueKey: "value",
-  labelKey: "label",
-  openUp: false,
-  placeholder: "Enter text",
-  className: "",
-  disableEnter: true,
-  collapseOnBlur: true,
-  collapseOnEscape: true,
-  collapseOnSelect: true,
-  autoFocus: true,
-  clearable: true,
-  options: [],
-  onChange: undefined,
-  onSelect: undefined,
-  onFocus: undefined,
-  onBlur: undefined,
-  onKeyUp: undefined,
-  onKeyDown: undefined,
-  noOptions: undefined,
+  key: "react-input-select", //String
+  style: null, //Object
+  ref: null, //Function
+  value: "", //String
+  valueKey: "value", //String
+  labelKey: "label", //String
+  placeholder: "Enter text", //String
+  className: "", //String
+  openUp: false, //Boolean
+  disableEnter: true, //Boolean
+  collapseOnBlur: true, //Boolean
+  collapseOnEscape: true, //Boolean 
+  collapseOnSelect: true, //Boolean
+  autoFocus: true, //Boolean
+  clearable: true, //Boolean - UPCOMING
+  options: [], //Array
+  onChange: undefined, //Function
+  onSelect: undefined, //Function
+  onFocus: undefined, //Function
+  onBlur: undefined, //Function
+  onKeyUp: undefined, //Function
+  onKeyDown: undefined, //Function
+  noOptions: undefined, //JSX
 }
 
 
