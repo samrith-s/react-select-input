@@ -33,7 +33,7 @@ A simple combination of traditional HTML5 input and select.
 ### Changelogs
 - **0.0.6** - Custom value now trims whitespaces before returning.
 - **0.0.5** - Custom value now returns the entered value (including spaces) as both label and value.
-- **0.0.4** - onSelect now gets triggered when Enter key is pressed without selecting any option.
-- **0.0.3** - searchMatchOptions get recomputed when a value is selected.
+- **0.0.4** - searchMatchOptions get recomputed when a value is selected.
+- **0.0.3** - onSelect now gets triggered when Enter key is pressed without selecting any option.
 - **0.0.2** - Arrow navigations now properly trigger enter.
 - **0.0.1** - Initial release.
