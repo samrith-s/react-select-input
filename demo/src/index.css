@@ -27,6 +27,7 @@ h1 {
 .options {
   font-size: 12px;
   margin-top: 15px;
+  text-align:center;
 }
 
 .options label {
