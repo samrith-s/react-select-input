@@ -3,7 +3,7 @@ import React, {Component} from 'react'
 import './index.css';
 import Textarea from 'react-autosize-textarea';
 
-export default class InputSelect extends Component {
+export default class SelectInput extends Component {
   constructor() {
     super();
     this.state = {
@@ -276,7 +276,7 @@ export default class InputSelect extends Component {
   }
 }
 
-InputSelect.defaultProps = {
+SelectInput.defaultProps = {
   key: "react-input-select", //String
   style: null, //Object
   ref: null, //Function

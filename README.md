@@ -1,6 +1,6 @@
-# react-input-select
+# react-select-input
 
-A simple combination of a traditional HTML5 input and select.
+A simple combination of traditional HTML5 input and select.
 
 ### Props
 ```javascript
