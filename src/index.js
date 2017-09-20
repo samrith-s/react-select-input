@@ -214,7 +214,7 @@ export default class SelectInput extends Component {
     else
       return {
         [this.props.labelKey]: this.input.value,
-        [this.props.valueKey]: this.input.value.replace(/\s/g,"-")
+        [this.props.valueKey]: this.input.value
       }
   }
 
