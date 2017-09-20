@@ -1,5 +1,5 @@
 /*!
- * react-select-input v0.0.5 - https://samrith-s.github.io/react-select-input
+ * react-select-input v0.0.6 - https://samrith-s.github.io/react-select-input
  * MIT Licensed
  */
 (function webpackUniversalModuleDefinition(root, factory) {
@@ -450,7 +450,7 @@ var SelectInput = function (_Component) {
       var _ref2;
 
       index = index !== null && index !== undefined ? index : _this.state.currentOption;
-      if (index > -1) return _this.state.searchMatchOptions[index];else return _ref2 = {}, _ref2[_this.props.labelKey] = _this.input.value, _ref2[_this.props.valueKey] = _this.input.value, _ref2;
+      if (index > -1) return _this.state.searchMatchOptions[index];else return _ref2 = {}, _ref2[_this.props.labelKey] = _this.input.value / trim(), _ref2[_this.props.valueKey] = _this.input.value.trim(), _ref2;
     };
 
     _this.setIsOpen = function (state, show) {
