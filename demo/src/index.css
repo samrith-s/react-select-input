@@ -5,10 +5,6 @@ html, body, #demo {
   height:100%;
 }
 
-h1 {
-  margin:0 0 20px;
-}
-
 body {
   font-family: sans-serif;
 }
@@ -17,4 +13,25 @@ body {
   display: flex;
   align-items: center;
   justify-content:center;
+}
+
+.demo-inner {
+  max-width: 500px;
+}
+
+h1 {
+  margin:0 0 20px;
+  text-align:center;
+}
+
+.options {
+  font-size: 12px;
+  margin-top: 15px;
+}
+
+.options label {
+  padding:0 5px;
+  cursor:pointer;
+  display:inline-block;
+  margin:5px 0;
 }
