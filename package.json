@@ -29,11 +29,20 @@
     "react": "^15.6.1",
     "react-dom": "^15.6.1"
   },
-  "author": "",
-  "homepage": "",
+  "author": "Samrith Shankar",
+  "homepage": "https://github.com/samrith-s/react-input-select",
   "license": "MIT",
-  "repository": "",
+  "repository": "https://github.com/samrith-s/react-input-select",
   "keywords": [
-    "react-component"
+    "react-component",
+    "input",
+    "select",
+    "input select combo",
+    "select dropdown",
+    "custom select",
+    "searchable",
+    "searchable select",
+    "free input",
+    "free select"
   ]
 }
