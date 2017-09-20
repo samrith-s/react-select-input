@@ -1,16 +1,32 @@
 # react-input-select
 
-[![Travis][build-badge]][build]
-[![npm package][npm-badge]][npm]
-[![Coveralls][coveralls-badge]][coveralls]
+A simple combination of a traditional HTML5 input and select.
 
-Describe react-input-select here.
-
-[build-badge]: https://img.shields.io/travis/user/repo/master.png?style=flat-square
-[build]: https://travis-ci.org/user/repo
-
-[npm-badge]: https://img.shields.io/npm/v/npm-package.png?style=flat-square
-[npm]: https://www.npmjs.org/package/npm-package
-
-[coveralls-badge]: https://img.shields.io/coveralls/user/repo/master.png?style=flat-square
-[coveralls]: https://coveralls.io/github/user/repo
+### Props
+```javascript
+  InputSelect.defaultProps = {
+    key: "react-input-select", //String
+    style: null, //Object
+    ref: null, //Function
+    value: "", //String
+    valueKey: "value", //String
+    labelKey: "label", //String
+    placeholder: "Enter text", //String
+    className: "", //String
+    openUp: false, //Boolean
+    disableEnter: true, //Boolean
+    collapseOnBlur: true, //Boolean
+    collapseOnEscape: true, //Boolean 
+    collapseOnSelect: true, //Boolean
+    autoFocus: true, //Boolean
+    clearable: true, //Boolean - NO EFFECT
+    options: [], //Array
+    onChange: undefined, //Function
+    onSelect: undefined, //Function
+    onFocus: undefined, //Function
+    onBlur: undefined, //Function
+    onKeyUp: undefined, //Function
+    onKeyDown: undefined, //Function
+    noOptions: undefined, //JSX
+  }
+```
