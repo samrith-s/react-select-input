@@ -111,6 +111,9 @@ export default class SelectInput extends Component {
     if(event.key==="Enter" && this.state.currentOption>-1) {
       this.handleSelect(this.pickOption())
     }
+    else if(event.key==="Enter" && this.state.currentOption===-1) {
+      this.handleSelect(this.pickOption())
+    }
 
     if(event.key==="Escape" && this.props.collapseOnEscape) {
       this.setState(this.setIsOpen(this.state, false));
@@ -210,7 +213,8 @@ export default class SelectInput extends Component {
       return this.state.searchMatchOptions[index];
     else
       return {
-        [this.props.labelKey]: this.input.value
+        [this.props.labelKey]: this.input.value,
+        [this.props.valueKey]: this.input.value.replace(/\s/g,"-")
       }
   }
 
