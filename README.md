@@ -21,12 +21,12 @@ A simple combination of a traditional HTML5 input and select.
     autoFocus: true, //Boolean
     clearable: true, //Boolean - NO EFFECT
     options: [], //Array
-    onChange: undefined, //Function
-    onSelect: undefined, //Function
-    onFocus: undefined, //Function
-    onBlur: undefined, //Function
-    onKeyUp: undefined, //Function
-    onKeyDown: undefined, //Function
+    onChange: undefined, //Function (event)
+    onSelect: undefined, //Function (option)
+    onFocus: undefined, //Function (event)
+    onBlur: undefined, //Function (event)
+    onKeyUp: undefined, //Function (event)
+    onKeyDown: undefined, //Function (event)
     noOptions: undefined, //JSX
   }
 ```
