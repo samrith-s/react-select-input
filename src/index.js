@@ -213,8 +213,8 @@ export default class SelectInput extends Component {
       return this.state.searchMatchOptions[index];
     else
       return {
-        [this.props.labelKey]: this.input.value,
-        [this.props.valueKey]: this.input.value
+        [this.props.labelKey]: this.input.value/trim(),
+        [this.props.valueKey]: this.input.value.trim()
       }
   }
 
