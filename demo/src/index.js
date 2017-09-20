@@ -13,7 +13,7 @@ class Demo extends Component {
       collapseOnBlur: true, //Boolean
       collapseOnEscape: true, //Boolean 
       collapseOnSelect: true, //Boolean
-      selected: null
+      selected: {}
     }
 
     this.options = []
@@ -36,6 +36,12 @@ class Demo extends Component {
     this.setState(state);
   }
 
+  handleSelect = (option) => {
+    let state = this.manipState(this.state, 'selected', option);
+    this.setState(state);
+  }
+
+
   render() {
     return <div className="demo-inner">
       <h1>react-select-input Demo</h1>
@@ -49,6 +55,9 @@ class Demo extends Component {
         collapseOnEscape={this.state.collapseOnEscape}
         collapseOnSelect={this.state.collapseOnSelect}
       />
+      <div className="selection">
+        Selection label: <strong>{this.state.selected.label || "none"}</strong>, value: <strong>{this.state.selected.value || "none" }</strong>
+      </div>
       <div className="options">
         <label>
           <input type="checkbox" checked={this.state.openUp} onChange={this.handleChange.bind(this, 'openUp')} />
