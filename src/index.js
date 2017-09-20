@@ -1,6 +1,5 @@
 import React, {Component} from 'react'
 
-import './index.css';
 import Textarea from 'react-autosize-textarea';
 
 export default class SelectInput extends Component {
