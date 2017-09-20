@@ -64,6 +64,7 @@ export default class SelectInput extends Component {
     state = this.manipState(state, 'currentOption', -1);
     if(this.props.collapseOnSelect)
       state = this.setIsOpen(state, false);
+    state = this.manipState(state, 'searchMatchOptions', this.matchingOptions(this.props.options, state.value));
     this.setState(state);
 
     if(this.isFunction(this.props.onSelect))
