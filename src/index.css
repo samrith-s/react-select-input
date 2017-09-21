@@ -11,6 +11,22 @@
   box-sizing: border-box;
 }
 
+.ris.ris-is-clearable .ris-clearable {
+  position: absolute;
+  top: 50%;
+  right: 5px;
+  font-size:1.1em;
+  margin-top:-1px;
+  transform: translate(0, -50%);
+  padding:5px;
+  color: #555;
+  cursor:pointer;
+}
+
+.ris.ris-is-creatable .ris-input {
+  padding-right:15px;
+}
+
 .ris .ris-input {
   display: block;
   resize: none;
