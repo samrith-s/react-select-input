@@ -1,5 +1,5 @@
 /*!
- * react-select-input v0.0.6 - https://samrith-s.github.io/react-select-input
+ * react-select-input v0.1.0 - https://samrith-s.github.io/react-select-input
  * MIT Licensed
  */
 (function webpackUniversalModuleDefinition(root, factory) {
@@ -358,6 +358,8 @@ var SelectInput = function (_Component) {
         state = _this.manipState(state, 'selectedOption', null);
       }
 
+      if (_this.isFunction(_this.props.onChange)) _this.props.onChange(event);
+
       _this.setState(state);
     };
 
@@ -367,6 +369,17 @@ var SelectInput = function (_Component) {
       _this.setState(state);
 
       if (_this.isFunction(_this.props.onFocus)) _this.props.onFocus(event);
+    };
+
+    _this.handleClear = function () {
+      var value = "";
+      var state = _this.manipState(_this.state, 'value', value);
+      state = _this.manipState(state, 'searchMatchOptions', _this.matchingOptions(_this.props.options, state.value));
+      state = _this.manipState(state, 'currentOption', -1);
+      state = _this.manipState(state, 'selectedOption', null);
+      _this.setState(state);
+
+      if (_this.isFunction(_this.props.onClear)) _this.props.onClear();
     };
 
     _this.handleBlur = function (event) {
@@ -450,7 +463,7 @@ var SelectInput = function (_Component) {
       var _ref2;
 
       index = index !== null && index !== undefined ? index : _this.state.currentOption;
-      if (index > -1) return _this.state.searchMatchOptions[index];else return _ref2 = {}, _ref2[_this.props.labelKey] = _this.input.value / trim(), _ref2[_this.props.valueKey] = _this.input.value.trim(), _ref2;
+      if (index > -1) return _this.state.searchMatchOptions[index];else return _ref2 = {}, _ref2[_this.props.labelKey] = _this.input.value.trim(), _ref2[_this.props.valueKey] = _this.input.value.trim(), _ref2;
     };
 
     _this.setIsOpen = function (state, show) {
@@ -521,7 +534,7 @@ var SelectInput = function (_Component) {
     return __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
       'div',
       {
-        className: "ris" + (this.props.openUp ? " ris-open-up" : "") + (this.props.className ? " " + this.props.className : ""),
+        className: "ris" + (this.props.openUp ? " ris-open-up" : "") + (this.props.clearable ? " ris-is-clearable" : "") + (this.props.className ? " " + this.props.className : ""),
         key: "ris-" + this.props.key,
         ref: function ref(_ref4) {
           return _this2.ris = _ref4;
@@ -542,6 +555,11 @@ var SelectInput = function (_Component) {
           return _this2.input = ref;
         }
       }),
+      this.props.clearable ? __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+        'div',
+        { className: 'ris-clearable', onClick: this.handleClear },
+        'x'
+      ) : null,
       this.state.isOpen ? this.state.searchMatchOptions.length > 0 ? __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
         'div',
         { className: 'ris-options', ref: function ref(_ref3) {
@@ -563,7 +581,7 @@ var SelectInput = function (_Component) {
 
 
 SelectInput.defaultProps = {
-  key: "react-input-select", //String
+  key: "react-select-input", //String
   style: null, //Object
   ref: null, //Function
   value: "", //String
@@ -577,7 +595,7 @@ SelectInput.defaultProps = {
   collapseOnEscape: true, //Boolean 
   collapseOnSelect: true, //Boolean
   autoFocus: true, //Boolean
-  clearable: true, //Boolean - UPCOMING
+  clearable: true, //Boolean
   options: [], //Array
   onChange: undefined, //Function
   onSelect: undefined, //Function
@@ -585,6 +603,7 @@ SelectInput.defaultProps = {
   onBlur: undefined, //Function
   onKeyUp: undefined, //Function
   onKeyDown: undefined, //Function
+  onClear: undefined, //Function
   noOptions: undefined //JSX
 };
 
