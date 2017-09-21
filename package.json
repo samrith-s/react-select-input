@@ -1,6 +1,6 @@
 {
   "name": "react-select-input",
-  "version": "0.0.6",
+  "version": "0.1.0",
   "description": "react-select-input React component",
   "main": "lib/index.js",
   "module": "es/index.js",

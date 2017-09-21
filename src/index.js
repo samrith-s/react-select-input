@@ -84,6 +84,9 @@ export default class SelectInput extends Component {
       state = this.manipState(state, 'currentOption', -1);
       state = this.manipState(state, 'selectedOption', null);
     }
+
+    if(this.isFunction(this.props.onChange))
+      this.props.onChange(event);
     
     this.setState(state);
   }
@@ -95,6 +98,18 @@ export default class SelectInput extends Component {
 
     if(this.isFunction(this.props.onFocus))
       this.props.onFocus(event);
+  }
+
+  handleClear = () => {
+    let value = "";
+    let state = this.manipState(this.state, 'value', value);
+    state = this.manipState(state, 'searchMatchOptions', this.matchingOptions(this.props.options, state.value));
+    state = this.manipState(state, 'currentOption', -1);
+    state = this.manipState(state, 'selectedOption', null);
+    this.setState(state);
+
+    if(this.isFunction(this.props.onClear))
+      this.props.onClear();
   }
 
   handleBlur = (event) => {
@@ -213,7 +228,7 @@ export default class SelectInput extends Component {
       return this.state.searchMatchOptions[index];
     else
       return {
-        [this.props.labelKey]: this.input.value/trim(),
+        [this.props.labelKey]: this.input.value.trim(),
         [this.props.valueKey]: this.input.value.trim()
       }
   }
@@ -242,7 +257,12 @@ export default class SelectInput extends Component {
   render() {
     return (
       <div 
-        className={"ris" + (this.props.openUp ? " ris-open-up" : "") + (this.props.className ? " " + this.props.className : "")}
+        className={
+          "ris" + 
+          (this.props.openUp ? " ris-open-up" : "") + 
+          (this.props.clearable ? " ris-is-clearable" : "") +
+          (this.props.className ? " " + this.props.className : "")
+        }
         key={"ris-" + this.props.key}
         ref={ref => this.ris = ref}
         style={this.props.style}
@@ -259,6 +279,12 @@ export default class SelectInput extends Component {
           autoFocus={this.props.autoFocus}
           innerRef={ref => this.input = ref}
         />
+        {
+          this.props.clearable ?
+            <div className="ris-clearable" onClick={this.handleClear}>x</div>
+          :
+            null
+        }
         {
           this.state.isOpen ?
             this.state.searchMatchOptions.length > 0 ?
@@ -281,7 +307,7 @@ export default class SelectInput extends Component {
 }
 
 SelectInput.defaultProps = {
-  key: "react-input-select", //String
+  key: "react-select-input", //String
   style: null, //Object
   ref: null, //Function
   value: "", //String
@@ -295,7 +321,7 @@ SelectInput.defaultProps = {
   collapseOnEscape: true, //Boolean 
   collapseOnSelect: true, //Boolean
   autoFocus: true, //Boolean
-  clearable: true, //Boolean - UPCOMING
+  clearable: true, //Boolean
   options: [], //Array
   onChange: undefined, //Function
   onSelect: undefined, //Function
@@ -303,6 +329,7 @@ SelectInput.defaultProps = {
   onBlur: undefined, //Function
   onKeyUp: undefined, //Function
   onKeyDown: undefined, //Function
+  onClear: undefined, //Function
   noOptions: undefined, //JSX
 }
 

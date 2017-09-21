@@ -46,7 +46,7 @@ collapseOnBlur | Boolean | `true` Clicking outside the ref should collapse the s
 collapseOnEscape | Boolean | `true` While focused, hitting Escape collapse the select.
 collapseOnSelect | Boolean | `true` Upon selection collapses the select.
 autoFocus | Boolean | `true` On mount, focus the input field.
-clearable | Boolean | `true` Show an icon to clear the entire select. Work in progress.
+clearable | Boolean | `true` Show an icon to clear the entire select.
 options | Array | `[ ]` Array of options to use while rendering the list.
 noOptions | JSX | `undefined` JSX to render when no option matches search.
 
@@ -59,9 +59,11 @@ onFocus | event | Synthetic event of the input upon focus.
 onBlur | event | Synthetic event of the input upon blur. Native function passed.
 onKeyUp | event | Synthetic event of the input upon keyUp.
 onKeyDown | event | Synthetic event of the input upon keyDown
+onClear | none | A callback after clear if `clearable` 
 
 
 ### Changelogs
+- **[v0.1.0](https://github.com/samrith-s/react-select-input/releases/tag/v0.1.0)** - Implemented `clearable`. Updated default key. Fixed issue with trimming of custom value on return.
 - **[v0.0.6](https://github.com/samrith-s/react-select-input/releases/tag/v0.0.6)** - Custom value now trims whitespaces before returning.
 - **[v0.0.5](https://github.com/samrith-s/react-select-input/releases/tag/v0.0.5)** - Custom value now returns the entered value (including spaces) as both label and value.
 - **[v0.0.4](https://github.com/samrith-s/react-select-input/releases/tag/v0.0.4)** - searchMatchOptions get recomputed when a value is selected.
