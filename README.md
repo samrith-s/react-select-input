@@ -58,8 +58,8 @@ onSelect | option | The selected option.<br />Gets triggered during both clickin
 onFocus | event | Synthetic event of the input upon focus.
 onBlur | event | Synthetic event of the input upon blur. Native function passed.
 onKeyUp | event | Synthetic event of the input upon keyUp.
-onKeyDown | event | Synthetic event of the input upon keyDown
-onClear | none | A callback after clear if `clearable` 
+onKeyDown | event | Synthetic event of the input upon keyDown.
+onClear | none | A callback after clear if `clearable`.
 
 
 ### Changelogs
