@@ -5,7 +5,7 @@ A simple combination of traditional HTML5 input and select.
 ### Props Overview
 ```javascript
   InputSelect.defaultProps = {
-    key: "react-input-select", //String
+    key: "react-select-input", //String
     style: null, //Object
     value: "", //String
     valueKey: "value", //String
@@ -20,8 +20,9 @@ A simple combination of traditional HTML5 input and select.
     autoFocus: true, //Boolean
     clearable: true, //Boolean - NO EFFECT
     options: [], //Array
-    onChange: undefined, //Function (event)
     onSelect: undefined, //Function (option)
+    onClear: undefined, // Function
+    onChange: undefined, //Function (event)
     onFocus: undefined, //Function (event)
     onBlur: undefined, //Function (event)
     onKeyUp: undefined, //Function (event)
@@ -33,7 +34,7 @@ A simple combination of traditional HTML5 input and select.
 ### Options
 Prop | Type | Default
 --- | :---: | ---
-key | String | `"react-input-select"` Unique key for the component.
+key | String | `"react-select-input"` Unique key for the component.
 style | Object | `null` Any custom inline styles that need to be passed.
 value | String | `""` The value to either populate or control the component.
 valueKey | String | `"value"` The key from your options which you want to use as the value key. Should be unique.
@@ -63,6 +64,7 @@ onClear | none | A callback after clear if `clearable`.
 
 
 ### Changelogs
+- **[v0.1.1](https://github.com/samrith-s/react-select-input/releases/tag/v0.1.0)** - onClear method added as an addition to onChange to specifically listen when input cleared.
 - **[v0.1.0](https://github.com/samrith-s/react-select-input/releases/tag/v0.1.0)** - Implemented `clearable`. Updated default key. Fixed issue with trimming of custom value on return.
 - **[v0.0.6](https://github.com/samrith-s/react-select-input/releases/tag/v0.0.6)** - Custom value now trims whitespaces before returning.
 - **[v0.0.5](https://github.com/samrith-s/react-select-input/releases/tag/v0.0.5)** - Custom value now returns the entered value (including spaces) as both label and value.
