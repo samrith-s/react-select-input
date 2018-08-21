@@ -1,5 +1,5 @@
 /*!
- * react-select-input v0.1.1 - https://samrith-s.github.io/react-select-input
+ * react-select-input v1.0.0 - https://samrith-s.github.io/react-select-input
  * MIT Licensed
  */
 (function webpackUniversalModuleDefinition(root, factory) {
@@ -74,7 +74,7 @@ return /******/ (function(modules) { // webpackBootstrap
 /******/ 	__webpack_require__.p = "";
 /******/
 /******/ 	// Load entry module and return exports
-/******/ 	return __webpack_require__(__webpack_require__.s = 5);
+/******/ 	return __webpack_require__(__webpack_require__.s = 2);
 /******/ })
 /************************************************************************/
 /******/ ([
@@ -88,188 +88,11 @@ module.exports = __WEBPACK_EXTERNAL_MODULE_0__;
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
-
-
 /**
  * Copyright (c) 2013-present, Facebook, Inc.
- * All rights reserved.
  *
- * This source code is licensed under the BSD-style license found in the
- * LICENSE file in the root directory of this source tree. An additional grant
- * of patent rights can be found in the PATENTS file in the same directory.
- *
- * 
- */
-
-function makeEmptyFunction(arg) {
-  return function () {
-    return arg;
-  };
-}
-
-/**
- * This function accepts and discards inputs; it has no side effects. This is
- * primarily useful idiomatically for overridable function endpoints which
- * always need to be callable, since JS lacks a null-call idiom ala Cocoa.
- */
-var emptyFunction = function emptyFunction() {};
-
-emptyFunction.thatReturns = makeEmptyFunction;
-emptyFunction.thatReturnsFalse = makeEmptyFunction(false);
-emptyFunction.thatReturnsTrue = makeEmptyFunction(true);
-emptyFunction.thatReturnsNull = makeEmptyFunction(null);
-emptyFunction.thatReturnsThis = function () {
-  return this;
-};
-emptyFunction.thatReturnsArgument = function (arg) {
-  return arg;
-};
-
-module.exports = emptyFunction;
-
-/***/ }),
-/* 2 */
-/***/ (function(module, exports, __webpack_require__) {
-
-"use strict";
-/**
- * Copyright (c) 2013-present, Facebook, Inc.
- * All rights reserved.
- *
- * This source code is licensed under the BSD-style license found in the
- * LICENSE file in the root directory of this source tree. An additional grant
- * of patent rights can be found in the PATENTS file in the same directory.
- *
- */
-
-
-
-/**
- * Use invariant() to assert state which your program assumes to be true.
- *
- * Provide sprintf-style format (only %s is supported) and arguments
- * to provide information about what broke and what you were
- * expecting.
- *
- * The invariant message will be stripped in production, but the invariant
- * will remain to ensure logic does not differ in production.
- */
-
-var validateFormat = function validateFormat(format) {};
-
-if (true) {
-  validateFormat = function validateFormat(format) {
-    if (format === undefined) {
-      throw new Error('invariant requires an error message argument');
-    }
-  };
-}
-
-function invariant(condition, format, a, b, c, d, e, f) {
-  validateFormat(format);
-
-  if (!condition) {
-    var error;
-    if (format === undefined) {
-      error = new Error('Minified exception occurred; use the non-minified dev environment ' + 'for the full error message and additional helpful warnings.');
-    } else {
-      var args = [a, b, c, d, e, f];
-      var argIndex = 0;
-      error = new Error(format.replace(/%s/g, function () {
-        return args[argIndex++];
-      }));
-      error.name = 'Invariant Violation';
-    }
-
-    error.framesToPop = 1; // we don't care about invariant's own frame
-    throw error;
-  }
-}
-
-module.exports = invariant;
-
-/***/ }),
-/* 3 */
-/***/ (function(module, exports, __webpack_require__) {
-
-"use strict";
-/**
- * Copyright 2014-2015, Facebook, Inc.
- * All rights reserved.
- *
- * This source code is licensed under the BSD-style license found in the
- * LICENSE file in the root directory of this source tree. An additional grant
- * of patent rights can be found in the PATENTS file in the same directory.
- *
- */
-
-
-
-var emptyFunction = __webpack_require__(1);
-
-/**
- * Similar to invariant but only logs a warning if the condition is not met.
- * This can be used to log issues in development environments in critical
- * paths. Removing the logging code for production environments will keep the
- * same logic and follow the same code paths.
- */
-
-var warning = emptyFunction;
-
-if (true) {
-  var printWarning = function printWarning(format) {
-    for (var _len = arguments.length, args = Array(_len > 1 ? _len - 1 : 0), _key = 1; _key < _len; _key++) {
-      args[_key - 1] = arguments[_key];
-    }
-
-    var argIndex = 0;
-    var message = 'Warning: ' + format.replace(/%s/g, function () {
-      return args[argIndex++];
-    });
-    if (typeof console !== 'undefined') {
-      console.error(message);
-    }
-    try {
-      // --- Welcome to debugging React ---
-      // This error was thrown as a convenience so that you can use this stack
-      // to find the callsite that caused this warning to fire.
-      throw new Error(message);
-    } catch (x) {}
-  };
-
-  warning = function warning(condition, format) {
-    if (format === undefined) {
-      throw new Error('`warning(condition, format, ...args)` requires a warning ' + 'message argument');
-    }
-
-    if (format.indexOf('Failed Composite propType: ') === 0) {
-      return; // Ignore CompositeComponent proptype check.
-    }
-
-    if (!condition) {
-      for (var _len2 = arguments.length, args = Array(_len2 > 2 ? _len2 - 2 : 0), _key2 = 2; _key2 < _len2; _key2++) {
-        args[_key2 - 2] = arguments[_key2];
-      }
-
-      printWarning.apply(undefined, [format].concat(args));
-    }
-  };
-}
-
-module.exports = warning;
-
-/***/ }),
-/* 4 */
-/***/ (function(module, exports, __webpack_require__) {
-
-"use strict";
-/**
- * Copyright 2013-present, Facebook, Inc.
- * All rights reserved.
- *
- * This source code is licensed under the BSD-style license found in the
- * LICENSE file in the root directory of this source tree. An additional grant
- * of patent rights can be found in the PATENTS file in the same directory.
+ * This source code is licensed under the MIT license found in the
+ * LICENSE file in the root directory of this source tree.
  */
 
 
@@ -280,14 +103,14 @@ module.exports = ReactPropTypesSecret;
 
 
 /***/ }),
-/* 5 */
+/* 2 */
 /***/ (function(module, exports, __webpack_require__) {
 
-module.exports = __webpack_require__(6);
+module.exports = __webpack_require__(3);
 
 
 /***/ }),
-/* 6 */
+/* 3 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -295,7 +118,7 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "default", function() { return SelectInput; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_react__ = __webpack_require__(0);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_react___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_0_react__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_react_autosize_textarea__ = __webpack_require__(7);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_react_autosize_textarea__ = __webpack_require__(4);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_react_autosize_textarea___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_1_react_autosize_textarea__);
 function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
 
@@ -320,11 +143,11 @@ var SelectInput = function (_Component) {
         return __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
           'div',
           {
-            className: "ris-option" + (_this.state.selectedOption === option[_this.props.valueKey] ? " selected" : "") + (_this.state.currentOption === index ? " current" : ""),
-            key: _this.props.key + '-option-' + index,
+            className: 'ris-option' + (_this.state.selectedOption === option[_this.props.valueKey] ? ' selected' : '') + (_this.state.currentOption === index ? ' current' : ''),
+            key: _this.props.uniqueKey + '-option-' + index,
             onClick: _this.handleClick.bind(_this, index),
             ref: function ref(_ref) {
-              return _this["option-" + option[_this.props.valueKey]] = _ref;
+              return _this['option-' + option[_this.props.valueKey]] = _ref;
             }
           },
           option[_this.props.labelKey]
@@ -372,7 +195,7 @@ var SelectInput = function (_Component) {
     };
 
     _this.handleClear = function () {
-      var value = "";
+      var value = '';
       var state = _this.manipState(_this.state, 'value', value);
       state = _this.manipState(state, 'searchMatchOptions', _this.matchingOptions(_this.props.options, state.value));
       state = _this.manipState(state, 'currentOption', -1);
@@ -392,13 +215,13 @@ var SelectInput = function (_Component) {
     };
 
     _this.handleKeyUp = function (event) {
-      if (event.key === "Enter" && _this.state.currentOption > -1) {
+      if (event.key === 'Enter' && _this.state.currentOption > -1) {
         _this.handleSelect(_this.pickOption());
-      } else if (event.key === "Enter" && _this.state.currentOption === -1) {
+      } else if (event.key === 'Enter' && _this.state.currentOption === -1) {
         _this.handleSelect(_this.pickOption());
       }
 
-      if (event.key === "Escape" && _this.props.collapseOnEscape) {
+      if (event.key === 'Escape' && _this.props.collapseOnEscape) {
         _this.setState(_this.setIsOpen(_this.state, false));
       }
 
@@ -406,9 +229,9 @@ var SelectInput = function (_Component) {
     };
 
     _this.handleKeyDown = function (event) {
-      if (event.key === "Enter" && _this.props.disableEnter) event.preventDefault();
+      if (event.key === 'Enter' && _this.props.disableEnter) event.preventDefault();
 
-      if (event.key === "Escape" && _this.props.collapseOnEscape) {
+      if (event.key === 'Escape' && _this.props.collapseOnEscape) {
         var state = _this.setIsOpen(_this.state, false);
         _this.setState(state);
       }
@@ -422,36 +245,36 @@ var SelectInput = function (_Component) {
       var state = {};
       var currentOption = _this.state.currentOption;
 
-      if (event.key === "ArrowUp" || event.key === "ArrowDown" && _this.disableEnter) event.preventDefault();
+      if (event.key === 'ArrowUp' || event.key === 'ArrowDown' && _this.disableEnter) event.preventDefault();
 
-      if (event.key === "ArrowUp" && currentOption === -1 && _this.props.openUp) currentOption = _this.state.searchMatchOptions.length;
+      if (event.key === 'ArrowUp' && currentOption === -1 && _this.props.openUp) currentOption = _this.state.searchMatchOptions.length;
 
       if (_this.props.openUp) {
-        if (event.key === "ArrowDown") {
+        if (event.key === 'ArrowDown') {
           if (currentOption > -1) currentOption++;else currentOption = -1;
-        } else if (event.key === "ArrowUp") currentOption--;
+        } else if (event.key === 'ArrowUp') currentOption--;
       } else {
-        if (event.key === "ArrowDown") currentOption++;else if (event.key === "ArrowUp") currentOption--;
+        if (event.key === 'ArrowDown') currentOption++;else if (event.key === 'ArrowUp') currentOption--;
       }
 
       if (currentOption < -1) currentOption = -1;else if (currentOption > _this.state.searchMatchOptions.length - 1 && !_this.props.openUp) currentOption = _this.state.searchMatchOptions.length - 1;else if (currentOption > _this.state.searchMatchOptions.length - 1 && _this.props.openUp) currentOption = -1;
 
       state = _this.manipState(_this.state, 'currentOption', currentOption);
-      var optionRef = currentOption > -1 ? _this["option-" + _this.state.searchMatchOptions[currentOption][_this.props.valueKey]] : null;
+      var optionRef = currentOption > -1 ? _this['option-' + _this.state.searchMatchOptions[currentOption][_this.props.valueKey]] : null;
       if (optionRef) optionRef.scrollIntoViewIfNeeded(false);
 
       _this.setState(state);
     };
 
     _this.matchingOptions = function (options, value) {
-      var searchValue = value.replace(/\s/g, "");
+      var searchValue = value.replace(/\s/g, '');
       var searchOptions = [];
 
       if (options && options.length > 0 && value) searchOptions = options.filter(function (option, index) {
-        var regexp = new RegExp(searchValue, "gi");
-        var value = option[_this.props.valueKey] || "";
-        var label = option[_this.props.labelKey] || "";
-        return regexp.test(label.replace(/\s/g, "")) || regexp.test(value.replace(/\s/g, ""));
+        var regexp = new RegExp(searchValue, 'gi');
+        var value = option[_this.props.valueKey] || '';
+        var label = option[_this.props.labelKey] || '';
+        return regexp.test(label.replace(/\s/g, '')) || regexp.test(value.replace(/\s/g, ''));
       });else searchOptions = options.slice(0, options.length);
 
       if (_this.props.openUp) searchOptions.reverse();
@@ -479,7 +302,7 @@ var SelectInput = function (_Component) {
     };
 
     _this.isFunction = function (obj) {
-      return typeof obj === "function";
+      return typeof obj === 'function';
     };
 
     _this.handleOutsideClick = function (event) {
@@ -496,20 +319,20 @@ var SelectInput = function (_Component) {
     return _this;
   }
 
-  SelectInput.prototype.componentWillMount = function componentWillMount() {
+  SelectInput.prototype.componentDidMount = function componentDidMount() {
     document.addEventListener('click', this.handleOutsideClick);
-  };
-
-  SelectInput.prototype.componentWillUnmount = function componentWillUnmount() {
-    document.removeEventListener('click', this.handleOutsideClick);
   };
 
   SelectInput.prototype.componentDidUpdate = function componentDidUpdate() {
     if (this.props.openUp && this.state.currentOption === -1 && this.state.isOpen && !this.state.selectedOption) {
       this.options.scrollTop = this.options.scrollHeight;
     } else if (this.props.openUp && this.state.selectedOption && this.state.isOpen) {
-      this["option-" + this.state.selectedOption].scrollIntoViewIfNeeded(true);
+      this['option-' + this.state.selectedOption].scrollIntoViewIfNeeded(true);
     }
+  };
+
+  SelectInput.prototype.componentWillUnmount = function componentWillUnmount() {
+    document.removeEventListener('click', this.handleOutsideClick);
   };
 
   /*
@@ -534,8 +357,8 @@ var SelectInput = function (_Component) {
     return __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
       'div',
       {
-        className: "ris" + (this.props.openUp ? " ris-open-up" : "") + (this.props.clearable ? " ris-is-clearable" : "") + (this.props.className ? " " + this.props.className : ""),
-        key: "ris-" + this.props.key,
+        className: 'ris' + (this.props.openUp ? ' ris-open-up' : '') + (this.props.clearable ? ' ris-is-clearable' : '') + (this.props.className ? ' ' + this.props.className : ''),
+        key: 'ris-' + this.props.uniqueKey,
         ref: function ref(_ref4) {
           return _this2.ris = _ref4;
         },
@@ -581,18 +404,18 @@ var SelectInput = function (_Component) {
 
 
 SelectInput.defaultProps = {
-  key: "react-select-input", //String
+  uniqueKey: 'react-select-input', //String
   style: null, //Object
   ref: null, //Function
-  value: "", //String
-  valueKey: "value", //String
-  labelKey: "label", //String
-  placeholder: "Enter text", //String
-  className: "", //String
+  value: '', //String
+  valueKey: 'value', //String
+  labelKey: 'label', //String
+  placeholder: 'Enter text', //String
+  className: '', //String
   openUp: false, //Boolean
   disableEnter: true, //Boolean
   collapseOnBlur: true, //Boolean
-  collapseOnEscape: true, //Boolean 
+  collapseOnEscape: true, //Boolean
   collapseOnSelect: true, //Boolean
   autoFocus: true, //Boolean
   clearable: true, //Boolean
@@ -608,7 +431,7 @@ SelectInput.defaultProps = {
 };
 
 /***/ }),
-/* 7 */
+/* 4 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -619,7 +442,7 @@ Object.defineProperty(exports, "__esModule", {
 });
 exports.default = undefined;
 
-var _TextareaAutosize = __webpack_require__(8);
+var _TextareaAutosize = __webpack_require__(5);
 
 var _TextareaAutosize2 = _interopRequireDefault(_TextareaAutosize);
 
@@ -628,7 +451,7 @@ function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { de
 exports.default = _TextareaAutosize2.default;
 
 /***/ }),
-/* 8 */
+/* 5 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -649,15 +472,15 @@ var _react = __webpack_require__(0);
 
 var _react2 = _interopRequireDefault(_react);
 
-var _propTypes = __webpack_require__(9);
+var _propTypes = __webpack_require__(6);
 
 var _propTypes2 = _interopRequireDefault(_propTypes);
 
-var _autosize = __webpack_require__(12);
+var _autosize = __webpack_require__(10);
 
 var _autosize2 = _interopRequireDefault(_autosize);
 
-var _lineHeight = __webpack_require__(13);
+var _lineHeight = __webpack_require__(11);
 
 var _lineHeight2 = _interopRequireDefault(_lineHeight);
 
@@ -816,16 +639,14 @@ TextareaAutosize.propTypes = {
 };
 
 /***/ }),
-/* 9 */
+/* 6 */
 /***/ (function(module, exports, __webpack_require__) {
 
 /**
- * Copyright 2013-present, Facebook, Inc.
- * All rights reserved.
+ * Copyright (c) 2013-present, Facebook, Inc.
  *
- * This source code is licensed under the BSD-style license found in the
- * LICENSE file in the root directory of this source tree. An additional grant
- * of patent rights can be found in the PATENTS file in the same directory.
+ * This source code is licensed under the MIT license found in the
+ * LICENSE file in the root directory of this source tree.
  */
 
 if (true) {
@@ -843,7 +664,7 @@ if (true) {
   // By explicitly using `prop-types` you are opting into new development behavior.
   // http://fb.me/prop-types-in-prod
   var throwOnDirectAccess = true;
-  module.exports = __webpack_require__(10)(isValidElement, throwOnDirectAccess);
+  module.exports = __webpack_require__(7)(isValidElement, throwOnDirectAccess);
 } else {
   // By explicitly using `prop-types` you are opting into new production behavior.
   // http://fb.me/prop-types-in-prod
@@ -852,27 +673,44 @@ if (true) {
 
 
 /***/ }),
-/* 10 */
+/* 7 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
 /**
- * Copyright 2013-present, Facebook, Inc.
- * All rights reserved.
+ * Copyright (c) 2013-present, Facebook, Inc.
  *
- * This source code is licensed under the BSD-style license found in the
- * LICENSE file in the root directory of this source tree. An additional grant
- * of patent rights can be found in the PATENTS file in the same directory.
+ * This source code is licensed under the MIT license found in the
+ * LICENSE file in the root directory of this source tree.
  */
 
 
 
-var emptyFunction = __webpack_require__(1);
-var invariant = __webpack_require__(2);
-var warning = __webpack_require__(3);
+var assign = __webpack_require__(8);
 
-var ReactPropTypesSecret = __webpack_require__(4);
-var checkPropTypes = __webpack_require__(11);
+var ReactPropTypesSecret = __webpack_require__(1);
+var checkPropTypes = __webpack_require__(9);
+
+var printWarning = function() {};
+
+if (true) {
+  printWarning = function(text) {
+    var message = 'Warning: ' + text;
+    if (typeof console !== 'undefined') {
+      console.error(message);
+    }
+    try {
+      // --- Welcome to debugging React ---
+      // This error was thrown as a convenience so that you can use this stack
+      // to find the callsite that caused this warning to fire.
+      throw new Error(message);
+    } catch (x) {}
+  };
+}
+
+function emptyFunctionThatReturnsNull() {
+  return null;
+}
 
 module.exports = function(isValidElement, throwOnDirectAccess) {
   /* global Symbol */
@@ -968,7 +806,8 @@ module.exports = function(isValidElement, throwOnDirectAccess) {
     objectOf: createObjectOfTypeChecker,
     oneOf: createEnumTypeChecker,
     oneOfType: createUnionTypeChecker,
-    shape: createShapeTypeChecker
+    shape: createShapeTypeChecker,
+    exact: createStrictShapeTypeChecker,
   };
 
   /**
@@ -1015,12 +854,13 @@ module.exports = function(isValidElement, throwOnDirectAccess) {
       if (secret !== ReactPropTypesSecret) {
         if (throwOnDirectAccess) {
           // New behavior only for users of `prop-types` package
-          invariant(
-            false,
+          var err = new Error(
             'Calling PropTypes validators directly is not supported by the `prop-types` package. ' +
             'Use `PropTypes.checkPropTypes()` to call them. ' +
             'Read more at http://fb.me/use-check-prop-types'
           );
+          err.name = 'Invariant Violation';
+          throw err;
         } else if ("development" !== 'production' && typeof console !== 'undefined') {
           // Old behavior for people using React.PropTypes
           var cacheKey = componentName + ':' + propName;
@@ -1029,15 +869,12 @@ module.exports = function(isValidElement, throwOnDirectAccess) {
             // Avoid spamming the console because they are often not actionable except for lib authors
             manualPropTypeWarningCount < 3
           ) {
-            warning(
-              false,
+            printWarning(
               'You are manually calling a React.PropTypes validation ' +
-              'function for the `%s` prop on `%s`. This is deprecated ' +
+              'function for the `' + propFullName + '` prop on `' + componentName  + '`. This is deprecated ' +
               'and will throw in the standalone `prop-types` package. ' +
               'You may be seeing this warning due to a third-party PropTypes ' +
-              'library. See https://fb.me/react-warning-dont-call-proptypes ' + 'for details.',
-              propFullName,
-              componentName
+              'library. See https://fb.me/react-warning-dont-call-proptypes ' + 'for details.'
             );
             manualPropTypeCallCache[cacheKey] = true;
             manualPropTypeWarningCount++;
@@ -1081,7 +918,7 @@ module.exports = function(isValidElement, throwOnDirectAccess) {
   }
 
   function createAnyTypeChecker() {
-    return createChainableTypeChecker(emptyFunction.thatReturnsNull);
+    return createChainableTypeChecker(emptyFunctionThatReturnsNull);
   }
 
   function createArrayOfTypeChecker(typeChecker) {
@@ -1131,8 +968,8 @@ module.exports = function(isValidElement, throwOnDirectAccess) {
 
   function createEnumTypeChecker(expectedValues) {
     if (!Array.isArray(expectedValues)) {
-       true ? warning(false, 'Invalid argument supplied to oneOf, expected an instance of array.') : void 0;
-      return emptyFunction.thatReturnsNull;
+       true ? printWarning('Invalid argument supplied to oneOf, expected an instance of array.') : void 0;
+      return emptyFunctionThatReturnsNull;
     }
 
     function validate(props, propName, componentName, location, propFullName) {
@@ -1174,21 +1011,18 @@ module.exports = function(isValidElement, throwOnDirectAccess) {
 
   function createUnionTypeChecker(arrayOfTypeCheckers) {
     if (!Array.isArray(arrayOfTypeCheckers)) {
-       true ? warning(false, 'Invalid argument supplied to oneOfType, expected an instance of array.') : void 0;
-      return emptyFunction.thatReturnsNull;
+       true ? printWarning('Invalid argument supplied to oneOfType, expected an instance of array.') : void 0;
+      return emptyFunctionThatReturnsNull;
     }
 
     for (var i = 0; i < arrayOfTypeCheckers.length; i++) {
       var checker = arrayOfTypeCheckers[i];
       if (typeof checker !== 'function') {
-        warning(
-          false,
-          'Invalid argument supplid to oneOfType. Expected an array of check functions, but ' +
-          'received %s at index %s.',
-          getPostfixForTypeWarning(checker),
-          i
+        printWarning(
+          'Invalid argument supplied to oneOfType. Expected an array of check functions, but ' +
+          'received ' + getPostfixForTypeWarning(checker) + ' at index ' + i + '.'
         );
-        return emptyFunction.thatReturnsNull;
+        return emptyFunctionThatReturnsNull;
       }
     }
 
@@ -1234,6 +1068,36 @@ module.exports = function(isValidElement, throwOnDirectAccess) {
       }
       return null;
     }
+    return createChainableTypeChecker(validate);
+  }
+
+  function createStrictShapeTypeChecker(shapeTypes) {
+    function validate(props, propName, componentName, location, propFullName) {
+      var propValue = props[propName];
+      var propType = getPropType(propValue);
+      if (propType !== 'object') {
+        return new PropTypeError('Invalid ' + location + ' `' + propFullName + '` of type `' + propType + '` ' + ('supplied to `' + componentName + '`, expected `object`.'));
+      }
+      // We need to check all keys in case some are required but missing from
+      // props.
+      var allKeys = assign({}, props[propName], shapeTypes);
+      for (var key in allKeys) {
+        var checker = shapeTypes[key];
+        if (!checker) {
+          return new PropTypeError(
+            'Invalid ' + location + ' `' + propFullName + '` key `' + key + '` supplied to `' + componentName + '`.' +
+            '\nBad object: ' + JSON.stringify(props[propName], null, '  ') +
+            '\nValid keys: ' +  JSON.stringify(Object.keys(shapeTypes), null, '  ')
+          );
+        }
+        var error = checker(propValue, key, componentName, location, propFullName + '.' + key, ReactPropTypesSecret);
+        if (error) {
+          return error;
+        }
+      }
+      return null;
+    }
+
     return createChainableTypeChecker(validate);
   }
 
@@ -1371,26 +1235,134 @@ module.exports = function(isValidElement, throwOnDirectAccess) {
 
 
 /***/ }),
-/* 11 */
+/* 8 */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+/*
+object-assign
+(c) Sindre Sorhus
+@license MIT
+*/
+
+
+/* eslint-disable no-unused-vars */
+var getOwnPropertySymbols = Object.getOwnPropertySymbols;
+var hasOwnProperty = Object.prototype.hasOwnProperty;
+var propIsEnumerable = Object.prototype.propertyIsEnumerable;
+
+function toObject(val) {
+	if (val === null || val === undefined) {
+		throw new TypeError('Object.assign cannot be called with null or undefined');
+	}
+
+	return Object(val);
+}
+
+function shouldUseNative() {
+	try {
+		if (!Object.assign) {
+			return false;
+		}
+
+		// Detect buggy property enumeration order in older V8 versions.
+
+		// https://bugs.chromium.org/p/v8/issues/detail?id=4118
+		var test1 = new String('abc');  // eslint-disable-line no-new-wrappers
+		test1[5] = 'de';
+		if (Object.getOwnPropertyNames(test1)[0] === '5') {
+			return false;
+		}
+
+		// https://bugs.chromium.org/p/v8/issues/detail?id=3056
+		var test2 = {};
+		for (var i = 0; i < 10; i++) {
+			test2['_' + String.fromCharCode(i)] = i;
+		}
+		var order2 = Object.getOwnPropertyNames(test2).map(function (n) {
+			return test2[n];
+		});
+		if (order2.join('') !== '0123456789') {
+			return false;
+		}
+
+		// https://bugs.chromium.org/p/v8/issues/detail?id=3056
+		var test3 = {};
+		'abcdefghijklmnopqrst'.split('').forEach(function (letter) {
+			test3[letter] = letter;
+		});
+		if (Object.keys(Object.assign({}, test3)).join('') !==
+				'abcdefghijklmnopqrst') {
+			return false;
+		}
+
+		return true;
+	} catch (err) {
+		// We don't expect any of the above to throw, but better to be safe.
+		return false;
+	}
+}
+
+module.exports = shouldUseNative() ? Object.assign : function (target, source) {
+	var from;
+	var to = toObject(target);
+	var symbols;
+
+	for (var s = 1; s < arguments.length; s++) {
+		from = Object(arguments[s]);
+
+		for (var key in from) {
+			if (hasOwnProperty.call(from, key)) {
+				to[key] = from[key];
+			}
+		}
+
+		if (getOwnPropertySymbols) {
+			symbols = getOwnPropertySymbols(from);
+			for (var i = 0; i < symbols.length; i++) {
+				if (propIsEnumerable.call(from, symbols[i])) {
+					to[symbols[i]] = from[symbols[i]];
+				}
+			}
+		}
+	}
+
+	return to;
+};
+
+
+/***/ }),
+/* 9 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
 /**
- * Copyright 2013-present, Facebook, Inc.
- * All rights reserved.
+ * Copyright (c) 2013-present, Facebook, Inc.
  *
- * This source code is licensed under the BSD-style license found in the
- * LICENSE file in the root directory of this source tree. An additional grant
- * of patent rights can be found in the PATENTS file in the same directory.
+ * This source code is licensed under the MIT license found in the
+ * LICENSE file in the root directory of this source tree.
  */
 
 
 
+var printWarning = function() {};
+
 if (true) {
-  var invariant = __webpack_require__(2);
-  var warning = __webpack_require__(3);
-  var ReactPropTypesSecret = __webpack_require__(4);
+  var ReactPropTypesSecret = __webpack_require__(1);
   var loggedTypeFailures = {};
+
+  printWarning = function(text) {
+    var message = 'Warning: ' + text;
+    if (typeof console !== 'undefined') {
+      console.error(message);
+    }
+    try {
+      // --- Welcome to debugging React ---
+      // This error was thrown as a convenience so that you can use this stack
+      // to find the callsite that caused this warning to fire.
+      throw new Error(message);
+    } catch (x) {}
+  };
 }
 
 /**
@@ -1415,12 +1387,29 @@ function checkPropTypes(typeSpecs, values, location, componentName, getStack) {
         try {
           // This is intentionally an invariant that gets caught. It's the same
           // behavior as without this statement except with a better message.
-          invariant(typeof typeSpecs[typeSpecName] === 'function', '%s: %s type `%s` is invalid; it must be a function, usually from ' + 'React.PropTypes.', componentName || 'React class', location, typeSpecName);
+          if (typeof typeSpecs[typeSpecName] !== 'function') {
+            var err = Error(
+              (componentName || 'React class') + ': ' + location + ' type `' + typeSpecName + '` is invalid; ' +
+              'it must be a function, usually from the `prop-types` package, but received `' + typeof typeSpecs[typeSpecName] + '`.'
+            );
+            err.name = 'Invariant Violation';
+            throw err;
+          }
           error = typeSpecs[typeSpecName](values, typeSpecName, componentName, location, null, ReactPropTypesSecret);
         } catch (ex) {
           error = ex;
         }
-        warning(!error || error instanceof Error, '%s: type specification of %s `%s` is invalid; the type checker ' + 'function must return `null` or an `Error` but returned a %s. ' + 'You may have forgotten to pass an argument to the type checker ' + 'creator (arrayOf, instanceOf, objectOf, oneOf, oneOfType, and ' + 'shape all require an argument).', componentName || 'React class', location, typeSpecName, typeof error);
+        if (error && !(error instanceof Error)) {
+          printWarning(
+            (componentName || 'React class') + ': type specification of ' +
+            location + ' `' + typeSpecName + '` is invalid; the type checker ' +
+            'function must return `null` or an `Error` but returned a ' + typeof error + '. ' +
+            'You may have forgotten to pass an argument to the type checker ' +
+            'creator (arrayOf, instanceOf, objectOf, oneOf, oneOfType, and ' +
+            'shape all require an argument).'
+          )
+
+        }
         if (error instanceof Error && !(error.message in loggedTypeFailures)) {
           // Only monitor this failure once because there tends to be a lot of the
           // same error.
@@ -1428,7 +1417,9 @@ function checkPropTypes(typeSpecs, values, location, componentName, getStack) {
 
           var stack = getStack ? getStack() : '';
 
-          warning(false, 'Failed %s type: %s%s', location, error.message, stack != null ? stack : '');
+          printWarning(
+            'Failed ' + location + ' type: ' + error.message + (stack != null ? stack : '')
+          );
         }
       }
     }
@@ -1439,7 +1430,7 @@ module.exports = checkPropTypes;
 
 
 /***/ }),
-/* 12 */
+/* 10 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var __WEBPACK_AMD_DEFINE_FACTORY__, __WEBPACK_AMD_DEFINE_ARRAY__, __WEBPACK_AMD_DEFINE_RESULT__;/*!
@@ -1739,11 +1730,11 @@ var __WEBPACK_AMD_DEFINE_FACTORY__, __WEBPACK_AMD_DEFINE_ARRAY__, __WEBPACK_AMD_
 });
 
 /***/ }),
-/* 13 */
+/* 11 */
 /***/ (function(module, exports, __webpack_require__) {
 
 // Load in dependencies
-var computedStyle = __webpack_require__(14);
+var computedStyle = __webpack_require__(12);
 
 /**
  * Calculate the `line-height` of a given node
@@ -1842,7 +1833,7 @@ module.exports = lineHeight;
 
 
 /***/ }),
-/* 14 */
+/* 12 */
 /***/ (function(module, exports) {
 
 // This code has been refactored for 140 bytes
