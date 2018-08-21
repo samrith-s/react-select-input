@@ -4,11 +4,17 @@ A simple combination of traditional HTML5 input and select.
 
 [NPM Package](https://www.npmjs.com/package/react-select-input)
 
+### v2 underway!
+
+I've left this project inactive for way too long (`v1.0.0` was launched a year after initial release!). Going through the code, there are a lot of stuff that could be improved. For all the users, the entire project will undergo a complete rewrite. Many of these changes will be breaking, leading up to the release of v2.
+
+**Head over to the [Version 2 thread](https://github.com/samrith-s/react-select-input/issues/2) to know more and discuss!**
+
 ### Props Overview
 
 ```javascript
 InputSelect.defaultProps = {
-  key: 'react-select-input', //String
+  uniqueKey: 'react-select-input', //String
   style: null, //Object
   value: '', //String
   valueKey: 'value', //String
@@ -66,15 +72,3 @@ InputSelect.defaultProps = {
 | onKeyUp   |   event    | Synthetic event of the input upon keyUp.                                                      |
 | onKeyDown |   event    | Synthetic event of the input upon keyDown.                                                    |
 | onClear   |    none    | A callback after clear if `clearable`.                                                        |
-
-### Changelogs
-
-- **[v1.0.0](https://github.com/samrith-s/react-select-input/releases/tag/v1.0.0)** - Finally released a major version after a year's delay. Default stylesheet is now shipped with the package and importable.
-- **[v0.1.1](https://github.com/samrith-s/react-select-input/releases/tag/v0.1.0)** - onClear method added as an addition to onChange to specifically listen when input cleared.
-- **[v0.1.0](https://github.com/samrith-s/react-select-input/releases/tag/v0.1.0)** - Implemented `clearable`. Updated default key. Fixed issue with trimming of custom value on return.
-- **[v0.0.6](https://github.com/samrith-s/react-select-input/releases/tag/v0.0.6)** - Custom value now trims whitespaces before returning.
-- **[v0.0.5](https://github.com/samrith-s/react-select-input/releases/tag/v0.0.5)** - Custom value now returns the entered value (including spaces) as both label and value.
-- **[v0.0.4](https://github.com/samrith-s/react-select-input/releases/tag/v0.0.4)** - searchMatchOptions get recomputed when a value is selected.
-- **[v0.0.3](https://github.com/samrith-s/react-select-input/releases/tag/v0.0.3)** - onSelect now gets triggered when Enter key is pressed without selecting any option.
-- **[v0.0.2](https://github.com/samrith-s/react-select-input/releases/tag/v0.0.2)** - Arrow navigations now properly trigger enter.
-- **[v0.0.1](https://github.com/samrith-s/react-select-input/releases/tag/v0.0.1)** - Initial release.
