@@ -1,10 +1,12 @@
 # react-select-input
 
+[![Travis](https://img.shields.io/travis/samrith-s/react-select-input/master.svg)][build]
+[![npm package](https://img.shields.io/npm/v/react-select-input.svg)][npm]
+[![GitHub license](https://img.shields.io/github/license/samrith-s/react-select-input.svg)][license]
+
 A simple combination of traditional HTML5 input and select.
 
-[NPM Package](https://www.npmjs.com/package/react-select-input)
-
-### v2 underway!
+## v2 underway!
 
 I've left this project inactive for way too long (`v1.0.0` was launched a year after initial release!). Going through the code, there are a lot of stuff that could be improved. For all the users, the entire project will undergo a complete rewrite. Many of these changes will be breaking, leading up to the release of v2.
 
@@ -72,3 +74,9 @@ InputSelect.defaultProps = {
 | onKeyUp   |   event    | Synthetic event of the input upon keyUp.                                                      |
 | onKeyDown |   event    | Synthetic event of the input upon keyDown.                                                    |
 | onClear   |    none    | A callback after clear if `clearable`.                                                        |
+
+Copyright &copy; 2018.
+
+[build]: https://travis-ci.org/samrith-s/react-select-input
+[npm]: https://www.npmjs.org/package/react-select-input
+[license]: https://github.com/samrith-s/react-select-input/blob/master/LICENSE
