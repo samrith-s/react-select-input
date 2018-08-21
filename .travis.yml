@@ -2,15 +2,15 @@ sudo: false
 
 language: node_js
 node_js:
-  - 6
+  - stable
 
-before_install:
-  - npm install codecov.io coveralls
+# before_install:
+# - npm install codecov.io coveralls
 
-after_success:
-  - cat ./coverage/lcov.info | ./node_modules/codecov.io/bin/codecov.io.js
-  - cat ./coverage/lcov.info | ./node_modules/coveralls/bin/coveralls.js
+# after_success:
+# - cat ./coverage/lcov.info | ./node_modules/codecov.io/bin/codecov.io.js
+# - cat ./coverage/lcov.info | ./node_modules/coveralls/bin/coveralls.js
+# - yarn build
 
-branches:
-  only:
-    - master
+script:
+  - yarn build
