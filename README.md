@@ -36,7 +36,7 @@ InputSelect.defaultProps = {
 
 | Prop             |  Type   | Default                                                                                       |
 | ---------------- | :-----: | --------------------------------------------------------------------------------------------- |
-| key              | String  | `"react-select-input"` Unique key for the component.                                          |
+| uniqueKey        | String  | `"react-select-input"` Unique key for the component.                                          |
 | style            | Object  | `null` Any custom inline styles that need to be passed.                                       |
 | value            | String  | `""` The value to either populate or control the component.                                   |
 | valueKey         | String  | `"value"` The key from your options which you want to use as the value key. Should be unique. |
