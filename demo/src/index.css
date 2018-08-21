@@ -1,8 +1,10 @@
-html, body, #demo {
+html,
+body,
+#demo {
   margin: 0;
   padding: 0;
-  width:100%;
-  height:100%;
+  width: 100%;
+  height: 100%;
 }
 
 body {
@@ -12,7 +14,7 @@ body {
 #demo {
   display: flex;
   align-items: center;
-  justify-content:center;
+  justify-content: center;
 }
 
 .demo-inner {
@@ -20,30 +22,30 @@ body {
 }
 
 h1 {
-  margin:0 0 20px;
-  text-align:center;
+  margin: 0 0 20px;
+  text-align: center;
 }
 
 .selection {
-  font-size:13px;
-  text-align:center;
-  margin-top:3px;
-  padding:7px;
+  font-size: 13px;
+  text-align: center;
+  margin-top: 3px;
+  padding: 7px;
   background: #eee;
   border-radius: 5px;
 }
 
 .options {
   margin-top: 15px;
-  text-align:center;
+  text-align: center;
   font-size: 12px;
 }
 
 .options label {
-  padding:0 5px;
-  cursor:pointer;
-  display:inline-block;
-  margin:5px 0;
+  padding: 0 5px;
+  cursor: pointer;
+  display: inline-block;
+  margin: 5px 0;
 }
 
-@import '../../src/index.css'
+@import '../../src/react-select-input.css';
