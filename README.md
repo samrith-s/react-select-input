@@ -2,6 +2,8 @@
 
 A simple combination of traditional HTML5 input and select.
 
+[NPM Package](https://www.npmjs.com/package/react-select-input)
+
 ### Props Overview
 
 ```javascript
