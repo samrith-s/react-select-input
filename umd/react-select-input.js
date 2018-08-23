@@ -1,5 +1,5 @@
 /*!
- * react-select-input v1.0.3 - https://samrith-s.github.io/react-select-input
+ * react-select-input v1.0.4 - https://samrith-s.github.io/react-select-input
  * MIT Licensed
  */
 (function webpackUniversalModuleDefinition(root, factory) {
