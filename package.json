@@ -20,7 +20,6 @@
     "deploy": "gh-pages -d demo/dist"
   },
   "dependencies": {
-    "babel-eslint": "^8.2.6",
     "prop-types": "^15.6.2",
     "react-autosize-textarea": "^0.4.8"
   },
@@ -37,7 +36,8 @@
     "nwb": "0.18.x",
     "prettier": "^1.14.2",
     "react": "^15.6.1",
-    "react-dom": "^15.6.1"
+    "react-dom": "^15.6.1",
+    "babel-eslint": "^8.2.6"
   },
   "author": "Samrith Shankar",
   "homepage": "https://samrith-s.github.io/react-select-input",
@@ -54,5 +54,6 @@
     "searchable select",
     "free input",
     "free select"
-  ]
+  ],
+  "sideEffects": false
 }
